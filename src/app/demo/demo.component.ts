@@ -16,8 +16,8 @@ export class DemoComponent implements OnInit {
   todoLists = [
     {
       id: 4,
-      name: 'Tìm hiểu về Drag and Drog',
-      content: 'Tìm hiểu về Drag and Drog và dựng giao diện demo sử dụng Drag and Drog',
+      name: 'Tìm hiểu về Drag and Drop',
+      content: 'Tìm hiểu về Drag and Drog và dựng giao diện demo sử dụng Drag and Drop',
       cteatTime: 'Tue Nov 09 2021 09:43:08 GMT+0700 (Giờ Đông Dương)',
     }
   ];
@@ -94,6 +94,7 @@ export class DemoComponent implements OnInit {
     const dialogRef = this.dialog.open(AddItemComponent, {
       width: '350px',
     });
+
 
     dialogRef.afterClosed().subscribe(res => {
       if (!res) {
