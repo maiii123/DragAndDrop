@@ -1,0 +1,24 @@
+<div [formGroup]="formAdd">
+  <div class="header">
+    <h2 class="title">ADD ITEM</h2>
+  </div>
+  <div class="content">
+    <div>
+      <mat-form-field class="mat-form-field-fluid">
+        <label class="w-100 color-label">
+          <p>Name </p><input formControlName="name" class="input-description" matInput type="text" (change)="onChangeInput('name', $event)"/>
+        </label>
+        <mat-error>Name{{getError('name')}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form-field-fluid" style="margin-top: 20px">
+        <label class="w-100 color-label">
+          <p>Content: </p><input formControlName="content" class="input-description" matInput type="text" (change)="onChangeInput('content', $event)"/>
+        </label>
+        <mat-error>Content{{getError('content')}}</mat-error>
+      </mat-form-field>
+  </div>
+</div>
+<div class="btn">
+  <button mat-button class="btn-item" (click)="cancel()">CANCEL</button>
+  <button mat-button class="btn-item" (click)="Add()" >ADD</button>
+</div>

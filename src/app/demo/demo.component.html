@@ -1,0 +1,80 @@
+<div>
+  <div class="header"><h1 class="title">DEMO DRAG AND DROG</h1></div>
+  <div class="add-item">
+    <button mat-raised-button class="btn-add" (click)="openDialog()">ADD ITEM</button>
+  </div>
+  <div class="content">
+    <div class="example-container">
+      <h2 class="title-list">TO DO {{todo}} OF {{total}}</h2>
+        <div
+          cdkDropList
+          id="todoList"
+          [cdkDropListData]="todoLists"
+          [cdkDropListConnectedTo]="['inProgressList']"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of todoLists" cdkDrag>
+            <p class="stt">Task {{item?.id}}</p>
+            <p class="title-value">{{item?.name}}</p>
+            <p class="content-value">{{item?.content}}</p>
+            <p class="cteatTime">{{item?.cteatTime| date: 'dd/MM/YYYY hh:mm'}}</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2 class="title-list">IN PROGRESS {{inProgress}} OF {{total}}</h2>
+      <div
+        cdkDropList
+        id="inProgressList"
+        [cdkDropListData]="inProgressLists"
+        [cdkDropListConnectedTo]="['todoList','resolvedList']"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of inProgressLists" cdkDrag>
+          <p class="stt">Task {{item?.id}}</p>
+          <p class="title-value">{{item?.name}}</p>
+          <p>{{item?.content}}</p>
+          <p class="cteatTime">{{item?.cteatTime| date: 'dd/MM/YYYY hh:mm'}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2 class="title-list">RESOLVED {{resolved}} OF {{total}}</h2>
+      <div
+        cdkDropList
+        id="resolvedList"
+        [cdkDropListData]="resolvedLists"
+        [cdkDropListConnectedTo]="['inProgressList','doneList']"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of resolvedLists" cdkDrag>
+          <p class="stt">Task {{item?.id}}</p>
+          <p class="title-value">{{item?.name}}</p>
+          <p>{{item?.content}}</p>
+          <p class="cteatTime">{{item?.cteatTime| date: 'dd/MM/YYYY hh:mm'}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2 class="title-list">DONE {{done}} OF {{total}}</h2>
+      <div
+        cdkDropList
+        id="doneList"
+        [cdkDropListData]="doneLists"
+        [cdkDropListConnectedTo]="['todoList']"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of doneLists" cdkDrag>
+          <p class="stt">Task {{item?.id}}</p>
+          <p class="title-value">{{item?.name}}</p>
+          <p>{{item?.content}}</p>
+          <p class="cteatTime">{{item?.cteatTime| date: 'dd/MM/YYYY hh:mm'}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

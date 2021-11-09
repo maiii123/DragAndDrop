@@ -1,0 +1,32 @@
+.class-value{
+  //border: none;
+  padding: 5px;
+}
+.content{
+  //text-align: center;
+  margin-left: 68px;
+  margin-bottom: 30px;
+}
+.header{
+  background-color: #fac2ae;
+  padding: 10px 24px 5px 24px;
+  margin-bottom: 20px;
+}
+.btn{
+  text-align: right;
+  border-top: 2px solid #fac2ae;
+}
+.btn-item{
+  margin: 20px;
+  padding: 5px 10px;
+  background-color: #fad2c3;
+  border: 1px solid #ecb19b;
+}
+.error{
+  color: red;
+}
+::ng-deep{
+  .mat-dialog-container {
+    padding: 0 !important;
+  }
+}
